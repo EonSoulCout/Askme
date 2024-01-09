@@ -1,3 +1,6 @@
+#include <algorithm>  // Necesario para std::shuffle
+#include <random>     // Necesario para std::default_random_engine y std::random_device
+
 #include "cuestionario.h"
 
 Cuestionario::Cuestionario()
@@ -15,12 +18,19 @@ Cuestionario::Cuestionario(Tema *tema) : m_tema(tema)
 
 Pregunta *Cuestionario::siguiente()
 {
-    // TODO: Lanzar preguntas al azar
-    foreach(Pregunta *p, m_preguntas){
-        if(!p->respondida()){
+    // Mezcla aleatoria de las preguntas
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+    std::shuffle(m_preguntas.begin(), m_preguntas.end(), rng);
+
+    // Busca la primera pregunta no respondida en la lista mezclada
+    for (Pregunta *p : m_preguntas) {
+        if (!p->respondida()) {
             return p;
         }
     }
+
+    // Si todas las preguntas están respondidas, devuelve nullptr
     return nullptr;
 }
 
