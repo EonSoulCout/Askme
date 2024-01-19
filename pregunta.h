@@ -17,10 +17,14 @@ public:
     void setApunte(Apunte *newApunte);
     QString toString() const;
     void responder(QString termino);
+
+    int numero() const;
+    void setNumero(int numero);
 private:
     bool m_correcta;
     bool m_respondida;
     Apunte *m_apunte;
+    int m_numero;
 };
 
 #endif // PREGUNTA_H

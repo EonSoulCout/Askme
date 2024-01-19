@@ -4,6 +4,8 @@
 #include <tema.h>
 #include <pregunta.h>
 
+#include <QRandomGenerator>
+
 class Cuestionario
 {
 public:
@@ -17,12 +19,18 @@ public:
     float score() const;
 
     const QList<Pregunta *> &preguntas() const;
+    const QString nombreTema() const;
+    int totalPreguntas();
+    bool hayMasPreguntas();
+
+    int mostradas() const;
 
 private:
     float m_score;
     Tema *m_tema;
     QList<Pregunta*> m_preguntas;
     QStringList m_terminos;
+    int m_mostradas;
 };
 
 #endif // CUESTIONARIO_H

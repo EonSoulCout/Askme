@@ -54,3 +54,14 @@ Pregunta::Pregunta(Apunte *apunte) : m_apunte(apunte)
     m_correcta = false;
     m_respondida = false;
 }
+
+int Pregunta::numero() const
+{
+    return m_numero;
+}
+
+void Pregunta::setNumero(int numero)
+{
+    m_numero = numero;
+}
+

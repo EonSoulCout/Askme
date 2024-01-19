@@ -5,7 +5,7 @@ Cuestionario::Cuestionario()
 
 }
 
-Cuestionario::Cuestionario(Tema *tema) : m_tema(tema)
+Cuestionario::Cuestionario(Tema *tema) : m_tema(tema), m_mostradas(0)
 {
     foreach (Apunte *a, m_tema->apuntes()){
         m_preguntas.append(new Pregunta(a));
@@ -15,12 +15,22 @@ Cuestionario::Cuestionario(Tema *tema) : m_tema(tema)
 
 Pregunta *Cuestionario::siguiente()
 {
-    // TODO: Lanzar preguntas al azar
-    foreach(Pregunta *p, m_preguntas){
-        if(!p->respondida()){
-            return p;
+    QList<Pregunta*> preguntasNoRespondidas;
+
+    // Obtener preguntas no respondidas
+    foreach (Pregunta *p, m_preguntas) {
+        if (!p->respondida()) {
+            preguntasNoRespondidas.append(p);
         }
     }
+
+    // Si aún hay preguntas no respondidas, elige una al azar
+    if (!preguntasNoRespondidas.isEmpty()) {
+        m_mostradas++;
+        int index = QRandomGenerator::global()->bounded(preguntasNoRespondidas.size());
+        return preguntasNoRespondidas[index];
+    }
+
     return nullptr;
 }
 
@@ -54,4 +64,24 @@ float Cuestionario::score() const
 const QList<Pregunta *> &Cuestionario::preguntas() const
 {
     return m_preguntas;
+}
+
+const QString Cuestionario::nombreTema() const
+{
+    return m_tema->nombre();
+}
+
+int Cuestionario::totalPreguntas()
+{
+    return m_preguntas.size();
+}
+
+bool Cuestionario::hayMasPreguntas()
+{
+    return (m_mostradas < totalPreguntas());
+}
+
+int Cuestionario::mostradas() const
+{
+    return m_mostradas;
 }

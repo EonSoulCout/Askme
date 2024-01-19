@@ -1,13 +1,20 @@
 #ifndef ASKME_H
 #define ASKME_H
 
-#include <QMdiSubWindow>
 #include <QMainWindow>
-#include <QList>
+#include <QMdiSubWindow>
+#include <QFileDialog>
+#include <QFile>
+#include <QTextStream>
+
+#include "apunteform.h"
+#include "cuestionarioform.h"
+#include "preguntaform.h"
+#include "listaform.h"
 
 #include "asignatura.h"
-#include "tablelist.h"
-#include "tabladialogo.h"
+#include "tema.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Askme; }
@@ -21,23 +28,26 @@ public:
     Askme(QWidget *parent = nullptr);
     ~Askme();
 
-    void cargarDatosDesdeCSV(const QString &archivoCSV);
-    void mostrarLista();
-    QList<Asignatura*> obtenerAsignaturas() const;
-    Tema *encontrarTema(Asignatura *asignatura, const QString &nombre);
-    void cargarDatos();
-    void cargarSubVentana(QWidget *ventana);
+public slots:
+    void on_cuestionarioCreado(Cuestionario *cuestionario);
 
 private slots:
     void on_actionNuevo_triggered();
+
+    void on_actionGenerar_triggered();
+
     void on_actionGuardar_triggered();
-    void guardar();
+
+    void on_actionLista_triggered();
 
 private:
     Ui::Askme *ui;
+    void cargarSubVentana(QWidget *ventana);
+    void cargarDatos();
+    void cargarApuntesDesdeCSV(const QString &filePath);
+
     QList<Asignatura*> m_asignaturas;
-    TableList *tablaModel;
+    QList<Apunte *> m_apuntes;
+
 };
-
 #endif // ASKME_H
-

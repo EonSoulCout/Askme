@@ -90,13 +90,13 @@ void ApunteForm::on_buttonBox_accepted()
     }
 
     if (termino.isEmpty()){
-        QMessageBox::warning(this, "Agregar apunte", "El término no puede estar vacío");
+        QMessageBox::warning(this, "Agregar apunte", "El término no pueden estar vacío");
         ui->txtTermino->setFocus();
         return;
     }
 
     if (concepto.isEmpty()){
-        QMessageBox::warning(this, "Agregar apunte", "El concepto no puede estar vacío");
+        QMessageBox::warning(this, "Agregar apunte", "El concepto no pueden estar vacío");
         ui->txtConcepto->setFocus();
         return;
     }
