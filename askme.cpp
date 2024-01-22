@@ -98,7 +98,6 @@ void Askme::cargarApuntesDesdeCSV(const QString &filePath)
 
 void Askme::on_actionNuevo_triggered()
 {
-    cargarDatos();
     ApunteForm *w = new ApunteForm(this);
     w->setAsignaturas(m_asignaturas);
     w->cargarAsignaturas();
@@ -156,3 +155,10 @@ void Askme::on_actionLista_triggered()
     ListaForm *w = new ListaForm(this);
     cargarSubVentana(w);
 }
+
+void Askme::on_actionSalir_triggered()
+{
+    -close();
+    return;
+}
+

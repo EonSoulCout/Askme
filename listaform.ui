@@ -37,7 +37,11 @@
        <item>
         <widget class="QPushButton" name="btnRefresh">
          <property name="text">
-          <string>Refresh</string>
+          <string>  Refresh</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>Recursos/actualizar2.png</normaloff>Recursos/actualizar2.png</iconset>
          </property>
         </widget>
        </item>

@@ -40,6 +40,8 @@ private slots:
 
     void on_actionLista_triggered();
 
+    void on_actionSalir_triggered();
+
 private:
     Ui::Askme *ui;
     void cargarSubVentana(QWidget *ventana);

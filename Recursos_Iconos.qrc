@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/new/Iconos">
+        <file>Iconos/actualizar2.png</file>
+        <file>Iconos/comprobado.png</file>
+        <file>Iconos/crear.png</file>
+        <file>Iconos/diario.png</file>
+        <file>Iconos/intercambio.png</file>
+        <file>Iconos/lista-de-verificacion.png</file>
+        <file>Iconos/mas.png</file>
+        <file>Iconos/nuevo-documento.png</file>
+        <file>Iconos/pilar.png</file>
+        <file>Iconos/prueba.png</file>
+        <file>Iconos/salida.png</file>
+        <file>Iconos/salvar.png</file>
+    </qresource>
+</RCC>

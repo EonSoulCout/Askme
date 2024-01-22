@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>503</width>
+    <height>399</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QMdiArea" name="mdiArea"/>
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(202, 196, 152);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -25,7 +29,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>503</width>
      <height>21</height>
     </rect>
    </property>
@@ -37,12 +41,20 @@
      <property name="title">
       <string>&amp;Apuntes</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Recursos/diario.png</normaloff>Recursos/diario.png</iconset>
+     </property>
      <addaction name="actionNuevo"/>
      <addaction name="actionLista"/>
     </widget>
     <widget class="QMenu" name="menuPreguntas">
      <property name="title">
       <string>&amp;Preguntas</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Recursos/prueba.png</normaloff>Recursos/prueba.png</iconset>
      </property>
      <addaction name="actionGenerar"/>
     </widget>
@@ -63,6 +75,16 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNuevo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Recursos/nuevo-documento.png</normaloff>Recursos/nuevo-documento.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Nuevo</string>
    </property>
@@ -74,6 +96,16 @@
    </property>
   </action>
   <action name="actionLista">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Recursos/lista-de-verificacion.png</normaloff>Recursos/lista-de-verificacion.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Lista</string>
    </property>
@@ -85,6 +117,16 @@
    </property>
   </action>
   <action name="actionGenerar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Recursos/crear.png</normaloff>Recursos/crear.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Generar</string>
    </property>
@@ -104,6 +146,16 @@
    </property>
   </action>
   <action name="actionSalir">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Recursos/salida.png</normaloff>Recursos/salida.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Salir</string>
    </property>
@@ -115,6 +167,16 @@
    </property>
   </action>
   <action name="actionGuardar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Recursos/salvar.png</normaloff>Recursos/salvar.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Guardar</string>
    </property>
