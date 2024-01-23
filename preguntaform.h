@@ -19,6 +19,9 @@ public:
 
     void setCuestionario(Cuestionario *newCuestionario);
 
+signals:
+    void cuestionarioFinalizado(Cuestionario *cuestionario);
+
 private slots:
     void finalizarCuestionario();
     void siguiente();

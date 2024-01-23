@@ -11,6 +11,8 @@
 #include "cuestionarioform.h"
 #include "preguntaform.h"
 #include "listaform.h"
+#include "resultadosform.h"
+
 
 #include "asignatura.h"
 #include "tema.h"
@@ -31,6 +33,8 @@ public:
 public slots:
     void on_cuestionarioCreado(Cuestionario *cuestionario);
 
+    void on_cuestionarioFinalizado(Cuestionario *cuestionario);
+
 private slots:
     void on_actionNuevo_triggered();
 
@@ -50,6 +54,6 @@ private:
 
     QList<Asignatura*> m_asignaturas;
     QList<Apunte *> m_apuntes;
-
+    Cuestionario *m_cuestionario;
 };
 #endif // ASKME_H

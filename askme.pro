@@ -20,7 +20,7 @@ SOURCES += \
     askme.cpp \
     pregunta.cpp \
     preguntaform.cpp \
-    scoreform.cpp \
+    resultadosform.cpp \
     tema.cpp
 
 HEADERS += \
@@ -34,7 +34,7 @@ HEADERS += \
     listaform.h \
     pregunta.h \
     preguntaform.h \
-    scoreform.h \
+    resultadosform.h \
     tema.h
 
 FORMS += \
@@ -43,7 +43,7 @@ FORMS += \
     cuestionarioform.ui \
     listaform.ui \
     preguntaform.ui \
-    scoreform.ui
+    resultadosform.ui
 
 
 # Default rules for deployment.
@@ -55,4 +55,4 @@ DISTFILES += \
     diagrama.qmodel
 
 RESOURCES += \
-    Recursos_Iconos.qrc
+    Recursos.qrc

@@ -1,7 +1,7 @@
 #include <QMessageBox>
 
 #include "cuestionarioform.h"
-#include "preguntaform.h"
+#include "resultadosform.h"
 
 #include "ui_cuestionarioform.h"
 
@@ -10,8 +10,6 @@ CuestionarioForm::CuestionarioForm(QWidget *parent) :
     ui(new Ui::CuestionarioForm)
 {
     ui->setupUi(this);
-
-
 }
 
 CuestionarioForm::~CuestionarioForm()
@@ -55,18 +53,19 @@ void CuestionarioForm::on_buttonBox_accepted()
         return;
     }
 
+    QString asignatura = ui->cmbAsignaturas->currentText();
     // Crear la tarea
     Tema *t = m_asignaturas->at(indexAsignatura)->temas().at(indexTema);
 
     // Emitir señal
-    emit cuestionarioCreado(new Cuestionario(t));
+    emit cuestionarioCreado(new Cuestionario(asignatura, t));
 
     PreguntaForm *preguntaForm = new PreguntaForm(this);
-    preguntaForm->setCuestionario(new Cuestionario(t));
+    preguntaForm->setCuestionario(new Cuestionario(asignatura, t));
     preguntaForm->show();
 
     // Cerrar la ventana actual
-    close();
+    this->parentWidget()->close();
 }
 
 

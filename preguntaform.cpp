@@ -1,5 +1,5 @@
 #include "preguntaform.h"
-#include "scoreform.h"
+#include "resultadosform.h"
 
 #include "ui_preguntaform.h"
 
@@ -53,31 +53,15 @@ void PreguntaForm::obtenerPregunta()
 
 void PreguntaForm::finalizarCuestionario()
 {
-    // Supongamos que m_cuestionario es la instancia de tu clase Cuestionario
-    m_cuestionario->terminar();  // Asegúrate de tener un método terminar() en Cuestionario
 
-    // Crear instancia de ScoreForm con nullptr como padre
-    ScoreForm *scoreForm = new ScoreForm(nullptr);
-
-    // Configurar la información en ScoreForm (asignatura, tema, etc.)
-    scoreForm->setAsignatura(m_asignatura);  // Agrega m_asignatura como miembro de la clase
-    scoreForm->setTema(m_tema);  // Agrega m_tema como miembro de la clase
-    scoreForm->setPreguntasRespondidas(m_cuestionario->mostradas(), m_cuestionario->totalPreguntas());  // Utiliza el método correcto
-    scoreForm->setPorcentajeAciertos(m_cuestionario->score());  // Reemplaza con la información correcta
-
-    // Agregar filas a la tabla con la información de cada pregunta
-    for (const auto& pregunta : m_cuestionario->preguntas()) {
-        scoreForm->agregarFilaTabla(pregunta);
-    }
-
-    // Mostrar la ventana de ScoreForm
-    scoreForm->show();
 }
 
 void PreguntaForm::on_btnEnd_released()
 {
+    m_cuestionario->terminar();
+    emit cuestionarioFinalizado(m_cuestionario);
     finalizarCuestionario();
-    close();
+    this->parentWidget()->close();
 }
 
 void PreguntaForm::on_btnNext_released()
