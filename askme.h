@@ -5,6 +5,7 @@
 #include <QMdiSubWindow>
 #include <QFileDialog>
 #include <QFile>
+#include <QDir>
 #include <QTextStream>
 
 #include "apunteform.h"
@@ -12,10 +13,12 @@
 #include "preguntaform.h"
 #include "listaform.h"
 #include "resultadosform.h"
+#include "creditosform.h"
 
 
 #include "asignatura.h"
 #include "tema.h"
+#include "apunte.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -46,6 +49,8 @@ private slots:
 
     void on_actionSalir_triggered();
 
+    void on_actionCreditos_triggered();
+
 private:
     Ui::Askme *ui;
     void cargarSubVentana(QWidget *ventana);
@@ -55,5 +60,7 @@ private:
     QList<Asignatura*> m_asignaturas;
     QList<Apunte *> m_apuntes;
     Cuestionario *m_cuestionario;
+    QString m_path;
+    QString m_archivo;
 };
 #endif // ASKME_H

@@ -12,7 +12,6 @@ Cuestionario::Cuestionario(QString asignatura, Tema *tema) :m_asignatura(asignat
         m_terminos.append(a->termino());
     }
 }
-
 Pregunta *Cuestionario::siguiente()
 {
     QList<Pregunta*> preguntasNoRespondidas;

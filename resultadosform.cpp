@@ -51,3 +51,9 @@ void ResultadosForm::cargarDatos()
         }
     }
 }
+
+void ResultadosForm::on_btnCerrar_released()
+{
+     this->parentWidget()->close();
+}
+

@@ -19,6 +19,9 @@ public:
 
     void setCuestionario(Cuestionario *newCuestionario);
 
+private slots:
+    void on_btnCerrar_released();
+
 private:
     Ui::ResultadosForm *ui;
     Cuestionario *m_cuestionario;

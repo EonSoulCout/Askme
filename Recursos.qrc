@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/Recursos">
-        <file>actualizar2.png</file>
+        <file>about.png</file>
+	<file>actualizar2.png</file>
         <file>comprobado.png</file>
         <file>crear.png</file>
         <file>diario.png</file>

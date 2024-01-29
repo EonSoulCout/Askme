@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Askme</class>
  <widget class="QMainWindow" name="Askme">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,19 +20,17 @@
    <iconset resource="Recursos.qrc">
     <normaloff>:/Recursos/pilar.png</normaloff>:/Recursos/pilar.png</iconset>
   </property>
-  <property name="windowOpacity">
-   <double>-2.000000000000000</double>
-  </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(66, 86, 109);
-alternate-background-color: rgb(66, 86, 109);
-border-color: rgb(66, 86, 109);
-border-top-color: rgb(66, 86, 109);
-border-right-color: rgb(66, 86, 109);
-border-bottom-color: rgb(66, 86, 109);
-border-left-color: rgb(66, 86, 109);
-selection-background-color: rgb(255, 255, 255);
-selection-color: rgb(61, 56, 70);</string>
+   <string notr="true">background-color: rgb(196, 222, 231);
+alternate-background-color: rgb(196, 222, 231);
+border-color: rgb(196, 222, 231);
+border-top-color:  rgb(196, 222, 231);
+border-bottom-color:  rgb(196, 222, 231);
+border-right-color:  rgb(196, 222, 231);
+border-left-color:  rgb(196, 222, 231);
+gridline-color:  rgb(196, 222, 231);
+selection-background-color: rgb(108, 108, 108);
+selection-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -52,6 +53,9 @@ selection-background-color: rgb(193, 205, 235);</string>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -165,6 +169,10 @@ selection-background-color: rgb(193, 205, 235);</string>
    </property>
   </action>
   <action name="actionCreditos">
+   <property name="icon">
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/Recursos/about.png</normaloff>:/Recursos/about.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Créditos</string>
    </property>
@@ -215,6 +223,21 @@ selection-background-color: rgb(193, 205, 235);</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="Askme_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/Recursos/pilar.png</normaloff>:/Recursos/pilar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Askme</string>
    </property>
   </action>
  </widget>

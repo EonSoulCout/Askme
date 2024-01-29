@@ -1,7 +1,7 @@
 #include <QMessageBox>
 
 #include "cuestionarioform.h"
-#include "resultadosform.h"
+#include "preguntaform.h"
 
 #include "ui_cuestionarioform.h"
 
@@ -10,6 +10,8 @@ CuestionarioForm::CuestionarioForm(QWidget *parent) :
     ui(new Ui::CuestionarioForm)
 {
     ui->setupUi(this);
+
+
 }
 
 CuestionarioForm::~CuestionarioForm()
